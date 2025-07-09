@@ -1,0 +1,73 @@
+/**
+   background: #f8f7fa;
+**/
+.signin {
+  background-color: #f8f7fa;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &_align {
+    background-color: #fff;
+    width: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &_form {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #444050;
+    font-weight: bold;
+
+    & + p {
+      font-size: 15px;
+      color: #444050;
+    }
+  }
+
+  label {
+    font-size: 13px;
+    color: #444050;
+  }
+
+  input {
+    border: 1px solid #adadad40;
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 10px;
+    height: 40px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    background-color: #7367f0;
+    color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 8px 20px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
