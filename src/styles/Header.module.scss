@@ -1,0 +1,29 @@
+.header {
+  background-color: #fff;
+  border-radius: 6px;
+  height: 65px;
+  overflow: hidden;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.12);
+
+  strong {
+    font-size: 18px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #cfcde4;
+
+    * {
+      display: inline-flex;
+    }
+  }
+}

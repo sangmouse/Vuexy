@@ -1,9 +1,14 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import style from "../styles/LayoutRoot.module.scss";
+import Footer from "./Footer";
 
 export default function LayoutRoot() {
-   return <section>
-      <h1>Header section</h1>
+  return (
+    <section className={style.root}>
+      <Header />
       <Outlet />
-      <h1>Footer section</h1>
-   </section>
+      <Footer />
+    </section>
+  );
 }

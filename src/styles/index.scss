@@ -1,5 +1,43 @@
+@font-face {
+  font-family: publicSans;
+  src: url(../fonts/public-sans/PublicSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: publicSans;
+  src: url(../fonts/public-sans/PublicSans-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: publicSans;
+  src: url(../fonts/public-sans/PublicSans-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: publicSans;
+  src: url(../fonts/public-sans/PublicSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: publicSans;
+  src: url(../fonts/public-sans/PublicSans-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #f8f7fa;
+}
+
+body {
+  font-family: publicSans, sans-serif;
+  font-weight: 400;
 }
 h2,
 p {
@@ -16,4 +54,7 @@ input {
   &:focus-visible {
     outline: none;
   }
+}
+a {
+  text-decoration: none;
 }

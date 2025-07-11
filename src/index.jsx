@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import "./styles/index.scss"
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import LayoutRoot from './components/LayoutRoot';
-import HomePage from './components/HomePage';
-import SignIn from './components/SignIn';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.scss";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LayoutRoot from "./components/LayoutRoot";
+import HomePage from "./components/HomePage";
+import SignIn from "./components/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -14,17 +14,17 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <HomePage />,
       },
-      {
-        path: '/sign-in',
-        element: <SignIn />
-      }
-    ]
-  }
-])
+    ],
+  },
+  {
+    path: "/sign-in",
+    element: <SignIn />,
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
