@@ -7,6 +7,7 @@ import LayoutRoot from "./components/LayoutRoot";
 import HomePage from "./components/HomePage";
 import SignIn from "./components/SignIn";
 import UserDetail from "./components/UserDetail";
+import UserForm from "./components/UserForm";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "edit/:id",
-        element: <h1>Edit user</h1>,
+        element: <UserForm />,
       },
     ],
   },
