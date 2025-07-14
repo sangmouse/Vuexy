@@ -1,0 +1,40 @@
+.detail {
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 24px;
+  font-size: 15px;
+  box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.12);
+  margin: 50px 0;
+
+  hr {
+    background-color: #444050;
+  }
+
+  h1 {
+    color: #444050;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 24px 0 0 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e0e0e0;
+    gap: 8px;
+
+    li span {
+      color: #444050;
+      font-weight: 600;
+
+      &:last-child {
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -26,4 +26,30 @@
       display: inline-flex;
     }
   }
+
+  &_option {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &_separate {
+    color: #7367f0;
+  }
+
+  button {
+    color: #7367f0;
+    font-weight: 600;
+    font-family: publicSans, sans-serif;
+    letter-spacing: 1.2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    span {
+      max-width: 18px;
+      display: inline-flex;
+      transform: rotate(-90deg);
+    }
+  }
 }

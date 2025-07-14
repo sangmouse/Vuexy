@@ -1,6 +1,14 @@
 import style from "../styles/Home.module.scss";
+import icRemove from "../assets/icons/ic-remove.png";
+import icView from "../assets/icons/ic-view.png";
+import icEdit from "../assets/icons/ic-edit.png";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
+  const directPage = (url) => navigate(url);
+
   return (
     <section className={style.list}>
       <section className={style.option}>
@@ -26,11 +34,15 @@ export default function HomePage() {
           <td>VTI Group</td>
           <td>Texas</td>
           <td>
-            <button>
-              <img src="" alt="" />
+            <button onClick={() => directPage("view/1")}>
+              <img src={icView} alt="view user" />
             </button>
-            <button></button>
-            <button></button>
+            <button onClick={() => directPage("edit/1")}>
+              <img src={icEdit} alt="edit user" />
+            </button>
+            <button>
+              <img src={icRemove} alt="remove user" />
+            </button>
           </td>
         </tr>
       </table>

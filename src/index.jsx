@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayoutRoot from "./components/LayoutRoot";
 import HomePage from "./components/HomePage";
 import SignIn from "./components/SignIn";
+import UserDetail from "./components/UserDetail";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "view/:id",
+        element: <UserDetail />,
+      },
+      {
+        path: "edit/:id",
+        element: <h1>Edit user</h1>,
       },
     ],
   },

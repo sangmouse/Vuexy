@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/icons/vuexy.svg";
 import style from "../styles/Header.module.scss";
+import icSignin from "../assets/icons/ic-signin.png";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const navigateSignIn = () => {
+    navigate("/sign-in");
+  };
+
   return (
     <section className={style["header"]}>
       <Link>
@@ -44,9 +51,18 @@ export default function Header() {
         </span>
         <span>Vuexy</span>
       </Link>
-      <p>
-        Good morning, <strong>John</strong>
-      </p>
+      <div className={style.header_option}>
+        <p>
+          Good morning, <strong>John</strong>
+        </p>
+        <p className={style.header_separate}>|</p>
+        <button onClick={navigateSignIn}>
+          Signin{" "}
+          <span>
+            <img src={icSignin} alt="" />
+          </span>
+        </button>
+      </div>
     </section>
   );
 }
