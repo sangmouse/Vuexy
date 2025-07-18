@@ -1,11 +1,11 @@
 {
-   "users": [
-      {
-         "id": "1",
-         "username": "Larry Wheels",
-         "role": "developer",
-         "department": "vti",
-         "address": "texas"
-      }
-   ]
+  "users": [
+    {
+      "id": "c8f2",
+      "username": "Scarlets",
+      "role": "tester",
+      "department": "vti",
+      "address": "VietNam"
+    }
+  ]
 }

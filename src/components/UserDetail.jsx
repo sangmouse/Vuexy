@@ -25,7 +25,7 @@ export default function UserDetail() {
         <button onClick={() => navigate("/")}>
           <img src={icBack} alt="back" />
         </button>
-        User Details
+        User Detail
       </h1>
       <ul>
         <li>

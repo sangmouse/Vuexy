@@ -5,6 +5,35 @@ import icEdit from "../assets/icons/ic-edit.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const ROLE = [
+  {
+    value: "tester",
+    label: "Tester",
+  },
+  {
+    value: "developer",
+    label: "Developer",
+  },
+  {
+    value: "ba",
+    label: "Business Analyst",
+  },
+];
+const DEPARTMENT = [
+  {
+    value: "vti",
+    label: "VTI Group",
+  },
+  {
+    value: "cmc",
+    label: "CMC Global",
+  },
+  {
+    value: "fsoft",
+    label: "FPT Software",
+  },
+];
+
 export default function HomePage() {
   const navigate = useNavigate();
   const [userList, setUserList] = useState([]);
@@ -15,6 +44,13 @@ export default function HomePage() {
     const res = await fetch("http://localhost:3001/users");
     const data = await res.json();
     setUserList(data);
+  };
+
+  const removeUser = async (id) => {
+    await fetch(`http://localhost:3001/users/${id}`, {
+      method: "DELETE",
+    });
+    await fetchList();
   };
 
   useEffect(() => {
@@ -46,8 +82,13 @@ export default function HomePage() {
           return (
             <tr>
               <td>{user.username}</td>
-              <td>{user.role}</td>
-              <td>{user.department}</td>
+              <td>{ROLE.find((item) => item.value === user.role).label}</td>
+              <td>
+                {
+                  DEPARTMENT.find((item) => item.value === user.department)
+                    .label
+                }
+              </td>
               <td>{user.address}</td>
               <td>
                 <button onClick={() => directPage(`view/${user.id}`)}>
@@ -56,7 +97,7 @@ export default function HomePage() {
                 <button onClick={() => directPage(`edit/${user.id}`)}>
                   <img src={icEdit} alt="edit user" />
                 </button>
-                <button>
+                <button onClick={() => removeUser(user.id)}>
                   <img src={icRemove} alt="remove user" />
                 </button>
               </td>
