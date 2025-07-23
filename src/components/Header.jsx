@@ -5,9 +5,15 @@ import icSignin from "../assets/icons/ic-signin.png";
 
 export default function Header() {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const navigateSignIn = () => {
-    navigate("/sign-in");
+    if (user?.username) {
+      localStorage.removeItem("user");
+      navigate("/sign-in");
+    } else {
+      navigate("/sign-in");
+    }
   };
 
   return (
@@ -53,11 +59,11 @@ export default function Header() {
       </Link>
       <div className={style.header_option}>
         <p>
-          Good morning, <strong>John</strong>
+          Good morning, <strong>{user?.username}</strong>
         </p>
         <p className={style.header_separate}>|</p>
         <button onClick={navigateSignIn}>
-          Signin{" "}
+          {user?.username ? "Signout" : "Signin"}
           <span>
             <img src={icSignin} alt="" />
           </span>

@@ -37,6 +37,8 @@ const DEPARTMENT = [
 export default function HomePage() {
   const navigate = useNavigate();
   const [userList, setUserList] = useState([]);
+  const [perPage, setPerPage] = useState(5);
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const directPage = (url) => navigate(url);
 
@@ -57,10 +59,21 @@ export default function HomePage() {
     fetchList();
   }, []);
 
+  useEffect(() => {
+    if (!user?.username) {
+      navigate("/sign-in");
+    }
+  });
+
   return (
     <section className={style.list}>
       <section className={style.option}>
-        <select name="page-size" id="page-size">
+        <select
+          name="page-size"
+          id="page-size"
+          value={perPage}
+          onChange={(event) => setPerPage(event.target.value)}
+        >
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
@@ -78,7 +91,7 @@ export default function HomePage() {
           <th>Address</th>
           <th>Actions</th>
         </tr>
-        {userList.map((user) => {
+        {userList.slice(0, +perPage).map((user) => {
           return (
             <tr>
               <td>{user.username}</td>
